@@ -1,0 +1,149 @@
+.atkinson-hyperlegible-regular {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-bold {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-regular-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.atkinson-hyperlegible-bold-italic {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.skip a{
+    padding: 5px;
+    position: absolute;
+    top: -65px;
+    margin: auto;
+    color:#000000;
+    background-color: white;
+    font-weight: bold;
+}
+
+.skip a:focus{
+    top: 25px;
+}
+
+body{
+    background-color: #faebd7;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+}
+nav ul{
+    list-style: none;
+}
+
+button:focus {
+    border: 10px solid #008000;
+}
+/* Only the top and bottom borders are visible, when focused. Maybe I should use another method besides the clip-path? */
+
+.container{
+    display: flex;
+    box-sizing:border-box;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    width: 50%;
+}
+
+
+.buy, .make, .thrift, .swap, .borrow, .use{
+    padding: 10%;
+}
+
+.buy{
+    background-color: #ff5a5a;
+}
+
+.make{
+    background-color: #fce853;
+}
+
+.thrift{
+    background-color: #60b1d1;
+}
+
+.swap{
+     background-color: #af6daf;
+}
+.borrow{
+    background-color: #a9906a;
+}
+
+.use{
+    background-color: #6aa9a8;
+}
+@media screen and (min-width: 700px){
+
+    .container{
+    display: grid;
+    box-sizing:border-box;
+    grid-template-columns: 1/span 1;
+    margin: auto;
+    width: 50%;
+    }
+
+    .buy{
+        background-color: #ff5a5a;
+        width: 100px;
+        height: 100px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        /* three pairs of (x, y) cordinates, where (0, 0) is the top left of page */
+        /* (top, bottom left, bottom right) */
+    }
+    .make, .thrift, .swap, .borrow, .use{
+        text-align: center;
+        width: 125px;
+        height: 100px;
+        clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
+        /* furthest left to furthest right */
+    }
+
+    .make{
+        background-color: #fce853;
+        width: 175px;
+        clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+        grid-row: 1
+    }
+
+    .thrift{
+        background-color: #60b1d1;
+        width: 250px;
+        clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%);
+    }
+
+    .swap{
+        background-color: #af6daf;
+        width: 350px;
+        clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+    }
+
+    .borrow{
+        background-color: #a9906a;
+        width: 475px;
+        clip-path: polygon(0% 100%, 7% 0%, 93% 0%, 100% 100%);
+    }
+
+    .use {
+        background-color: #6aa9a8;
+        width: 575px;
+        clip-path: polygon(0% 100%, 6% 0%, 94% 0%, 100% 100%);
+    }
+/* Don't use this method, try to make the interactive heigharcy another way */
+}
