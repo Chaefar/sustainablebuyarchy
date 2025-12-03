@@ -1,3 +1,15 @@
+
+/* <weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name */
+/* Quicksand Font from Google - https://fonts.google.com/specimen/Quicksand */
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .skip a{
     padding: 5px;
     position: absolute;
@@ -14,30 +26,45 @@
 
 body{
     background-color: #faebd7;
+    font-family: "Quicksand", sans-serif;
 }
 
-nav{
+nav ul {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    background-color: #800080;
+    list-style-type: none;
+    padding: 2%;
+    overflow: hidden;
 }
-nav ul{
-    list-style: none;
+
+nav ul li{
+    padding: 10px;
+}
+
+nav ul li a {
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:visited{
+    color:#B5B8F2;
+}
+
+main{
+    line-height: 1.5em;
+}
+
+.header{
+    font-size: 1.5em;
 }
 
 button:focus {
     border: 10px solid #008000;
 }
 
-/* .container{
-    display: grid;
-    box-sizing:border-box;
-    flex-direction: column;
-    align-content: center; */
-    /* margin: auto;
-    width: 50%; */
-/* } */
-
- .tabs {
+.tabs {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -48,18 +75,28 @@ button:focus {
 .tab-button {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: #006596;
+    color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 .tab-button.active {
     border-bottom: 2px solid #000;
+    background-color: #B5BEC8;
+    /* try finding a different background color */
 }
 
 .tab-content {
     display: none;
     margin-top: 20px;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .tab-content.active {
@@ -68,101 +105,106 @@ button:focus {
 
 .buy, .make, .thrift, .swap, .borrow, .use{
     padding: 10%;
+    color:#ffffff;
 }
 
 .buy{
-    background-color: #ff5a5a;
+    /* background-color: #ff5a5a; */
+    background-color: #E26352;
 }
 
 .make{
-    background-color: #fce853;
+    /* background-color: #fce853; */
+    background-color: #AA8630;
 }
 
 .thrift{
-    background-color: #60b1d1;
+    /* background-color: #60b1d1; */
+    background-color: #409D44;
 }
 
 .swap{
-     background-color: #af6daf;
+     /* background-color: #af6daf; */
+     background-color: #1993D0;
 }
 .borrow{
-    background-color: #a9906a;
+    /* background-color: #a9906a; */
+    background-color: #7A82E4;
 }
 
 .use{
-    background-color: #6aa9a8;
+    /* background-color: #6aa9a8; */
+    background-color: #8B8B8B;
+}
+
+footer{
+    background-color: #800080;
+    color: #ffffff;
+    padding:2%;
 }
 @media screen and (min-width: 800px){
 
     .container{
         display: grid;
-        box-sizing:border-box;
-        grid-template-areas:
-            "header header"
-            "menu content"
-            "footer footer";
-        grid-template-columns: 1fr 3fr;
-        gap: 3px;
-        /* Grid layout using grid-area: https://www.w3schools.com/css/css_grid.asp */
-        /* grid-template-columns: 1fr 1fr;
-        margin: auto;
-        width: 50%;
-        justify-content: center; */
+        grid-template-columns: 1fr 2fr;
+        margin: 3%;
     }
 
-    .buyarchy{
+    .header{
+        grid-column: 1/span -1;
+        grid-row: 1/span 1;
+        text-align: center;
+    }
+    .menu{
         grid-column: 1/span 1;
+        grid-row: 2/span 1;
     }
-
     .content{
         grid-column: 2/span 1;
+        grid-row: 2/span 1;
+    }
+    .footer{
+        grid-column: 1/ span -1;
+        grid-row: 3/span 1;
     }
 
-    .buy{
-        background-color: #ff5a5a;
+    .tabs{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-rows: repeat(6, 1fr); */
+    }
+
+    /* .buy{
         width: 100px;
         height: 100px;
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-        /* three pairs of (x, y) cordinates, where (0, 0) is the top left of page */
-        /* (top, bottom left, bottom right) */
-    }
-    .make, .thrift, .swap, .borrow, .use{
-        text-align: center;
-        width: 125px;
-        height: 100px;
-        clip-path: polygon(0% 100%, 25% 0%, 75% 0%, 100% 100%);
-        /* furthest left to furthest right */
-    }
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+        /* three pairs of (x, y) cordinates, where (0, 0) is the top left of page
+        (top, bottom left, bottom right) */
+    /* } */
 
-    .make{
-        background-color: #fce853;
+    /* .make{
         width: 175px;
         clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
-        grid-row: 1
     }
 
     .thrift{
-        background-color: #60b1d1;
         width: 250px;
         clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%);
     }
 
     .swap{
-        background-color: #af6daf;
         width: 350px;
         clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
     }
 
     .borrow{
-        background-color: #a9906a;
         width: 475px;
         clip-path: polygon(0% 100%, 7% 0%, 93% 0%, 100% 100%);
     }
 
     .use {
-        background-color: #6aa9a8;
         width: 575px;
         clip-path: polygon(0% 100%, 6% 0%, 94% 0%, 100% 100%);
-    }
+    } */
 /* Don't use this method, try to make the interactive heigharcy another way */
 }
