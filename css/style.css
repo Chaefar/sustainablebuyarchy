@@ -1,27 +1,3 @@
-.atkinson-hyperlegible-regular {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.atkinson-hyperlegible-bold {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.atkinson-hyperlegible-regular-italic {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.atkinson-hyperlegible-bold-italic {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
 .skip a{
     padding: 5px;
     position: absolute;
@@ -51,17 +27,44 @@ nav ul{
 button:focus {
     border: 10px solid #008000;
 }
-/* Only the top and bottom borders are visible, when focused. Maybe I should use another method besides the clip-path? */
 
-.container{
+/* .container{
     display: flex;
     box-sizing:border-box;
     flex-direction: column;
-    align-content: center;
+    align-content: center; */
+    /* margin: auto;
+    width: 50%; */
+/* } */
+
+ .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin: auto;
     width: 50%;
 }
 
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #000;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
 
 .buy, .make, .thrift, .swap, .borrow, .use{
     padding: 10%;
@@ -89,7 +92,7 @@ button:focus {
 .use{
     background-color: #6aa9a8;
 }
-@media screen and (min-width: 700px){
+@media screen and (min-width: 800px){
 
     .container{
     display: grid;
