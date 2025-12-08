@@ -1,12 +1,3 @@
-// document.querySelector(".tab").addEventListener("click", function () {
-//     console.log("Tab Clicked")
-//     if (this.checked){
-//         document.querySelector("").style.display = "block"
-//     }else{
-//         document.querySelector("").style.display = "none"
-//     }
-// });
-
 document.querySelectorAll('.tab-button').forEach(button => {
             button.addEventListener('click', function() {
                 const tabId = this.getAttribute('data-tab');
@@ -16,8 +7,9 @@ document.querySelectorAll('.tab-button').forEach(button => {
 
                 this.classList.add('active');
                 document.getElementById(tabId).classList.add('active');
+                console.log("New button clicked");
             });
         });
 
 document.getElementById('year').innerHTML = new Date().getFullYear();
-    console.log("did year show up?")
+    console.log("Year showed up")

@@ -25,7 +25,8 @@
 }
 
 body{
-    background-color: #faebd7;
+    background-color: #fad7f5;
+    color: #261414;
     font-family: "Quicksand", sans-serif;
 }
 
@@ -50,60 +51,71 @@ nav ul li a {
 }
 
 a:visited{
-    color:#B5B8F2;
+    color:#76b8ff;
 }
 
 main{
     line-height: 1.5em;
+    border: 5px double #ff6bba;
 }
 
-.header{
-    font-size: 1.5em;
+h1{
+    font-size: 1.75em;
     margin: 1%;
     text-align: center;
 }
 
-.header p{
-    
+img{
+    display: block;
+    border-radius: 50%;
+    margin:auto;
+    width: 15%;
+
+}
+
+h3{
+    font-size: 1em;
 }
 
 .menu{
-    /* margin: 10px; */
-    width: 80%;
+    margin: 10px;
+    width: 70%;
 }
 
-button:focus {
-    border: 10px solid #008000;
+button{
+    font-family: "Quicksand", sans-serif;
 }
 
 .tabs {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    width: 30%;
+    width: 20%;
 }
 
 .tab-button {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #006596;
+    background-color: #b336c6;
     color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ffa3eb;
+    border-radius: 10px;
 }
 
 .tab-button.active {
-    border: 2px solid #000;
-    /* try finding a different background color */
+    border: 3px solid #510038;
 }
 
 .tab-content {
     display: none;
     margin-top: 20px;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+    animation: fadeEffect 1s;
 }
 
-/* Go from zero to full opacity */
+*:focus{
+    border: 10px dotted #6be6ff;
+}
+
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -114,32 +126,39 @@ button:focus {
 }
 
 .buy, .make, .thrift, .swap, .borrow, .use{
-    padding: 10%;
-    color:#ffffff;
+    padding: 5%;
+    color:#000000;
+    font-weight: 500;
+    font-size: 1.5em;
 }
 
 .buy{
     /* background-color: #ff5a5a; */
-    background-color: #E26352;
+    background-color: #ef4832;
 }
 
 .make{
-    background-color: #AA8630;
+    background-color: #fda63c;
 }
 
 .thrift{
-    background-color: #409D44;
+    background-color: #f8ec3a;
 }
 
 .swap{
-     background-color: #1993D0;
+     background-color: #409D44;
 }
 .borrow{
-    background-color: #7A82E4;
+    background-color: #1993D0;
 }
 
 .use{
-    background-color: #8B8B8B;
+    background-color: #7A82E4;
+}
+
+.video-size{
+    margin:auto;
+    width: 50%;
 }
 
 footer{
@@ -147,8 +166,12 @@ footer{
     color: #ffffff;
     padding:2%;
 }
+
 @media screen and (min-width: 800px){
 
+    main{
+        padding: 2%;
+    }
     .container{
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -183,6 +206,10 @@ footer{
         grid-template-columns: 1fr;
         width: 90%;
         /* grid-template-rows: repeat(6, 1fr); */
+    }
+    .video-size{
+        width: 560px;
+        height: 315px;
     }
 
     /* .buy{
